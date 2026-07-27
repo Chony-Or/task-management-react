@@ -8,4 +8,13 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://task-management-laravel-api-production-b3f4.up.railway.app',
+        changeOrigin: true,
+        secure: true,
+      },
+    },
+  },
 })
